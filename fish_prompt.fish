@@ -16,6 +16,7 @@ function fish_prompt
   set -l cyan (set_color -b 2980b9)
   set -l magenta (set_color -b DB0A5B)
   set -l green (set_color -b 16A085)
+  set -l prompt \n' $'
 
   set hostname "$gray "(_hostname)" $default_bg"
   set username "$cyan "(_username)" $default_bg"
@@ -31,5 +32,5 @@ function fish_prompt
 
   set git_info "$green$git_info$default_bg"
 
-  echo $hostname$username$current_dir$git_info' -> '
+  echo "$hostname$username$current_dir$git_info $prompt "
 end
